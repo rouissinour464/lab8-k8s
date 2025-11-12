@@ -1,5 +1,31 @@
-  - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: db-secret
-                  key: POSTGRES_PASSWORD
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: nour292/lab5-web:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOST
+              value: db-service
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              value: lab5user
+            - name: DB_PASSWORD
+              value: lab5pass
+            - name: DB_NAME
+              value: lab5db
+

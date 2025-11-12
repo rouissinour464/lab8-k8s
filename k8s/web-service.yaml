@@ -10,5 +10,5 @@ spec:
   ports:
     - port: 80
       targetPort: 5000
-      nodePort: 30080   # tu peux le laisser automatique si tu veux
+      nodePort: 30085   # tu peux le laisser automatique si tu veux
   type: NodePort
