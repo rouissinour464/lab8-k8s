@@ -1,4 +1,4 @@
-# Lab 6 – StatefulSet PostgreSQL
+# Lab 8 – StatefulSet PostgreSQL
 
 Ce laboratoire illustre le déploiement d'une base de données PostgreSQL avec un **StatefulSet** dans Kubernetes et la migration depuis Lab 5.
 
